@@ -38,7 +38,9 @@ export PATH="$PATH:$HOME/.rvm/bin"
 ###################
 ### ANGULAR CLI ###
 ###################
-[ !command -v ng &> /dev/null ] || source <(ng completion script)
+if ! [ -x "$(command -v ng)" ]; then
+  source <(ng completion script)
+fi
 
 ###########
 ### ENV ###
