@@ -71,5 +71,5 @@ alias dce="docker-compose exec"
 ### VSCode Extensions ###
 #########################
 if [ -x "$(command -v code)" ]; then
-  code --install-extension 'k--kato.intellij-idea-keybindings'
+  code --install-extension 'k--kato.intellij-idea-keybindings' > /dev/null
 fi
