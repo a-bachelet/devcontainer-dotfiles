@@ -38,7 +38,7 @@ export PATH="$PATH:$HOME/.rvm/bin"
 ###################
 ### ANGULAR CLI ###
 ###################
-[[ "$(command -v ng)" == "" ]] || source <(ng completion script)
+[ !command -v ng &> /dev/null ] || source <(ng completion script)
 
 ###########
 ### ENV ###
@@ -64,3 +64,10 @@ alias gpsc="git push -o ci.skip"
 alias dc="docker-compose"
 alias dcu="docker-compose up"
 alias dce="docker-compose exec"
+
+#########################
+### VSCode Extensions ###
+#########################
+if ! [ -x "$(command -v code)" ]; then
+  code --install-extension 'k--kato.intellij-idea-keybindings'
+fi
