@@ -22,7 +22,7 @@ fi
 if command_exists starship; then 
     echo "starship already installed"
 else
-    curl -fsSL https://starship.rs/install.sh | sh
+    curl -fsSL https://starship.rs/install.sh | sh -s -- --yes
     if [ $? -ne 0 ]; then
         echo "Failed to install starship"
         exit 1
