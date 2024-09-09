@@ -9,7 +9,7 @@ command_exists() {
 if command_exists zsh; then 
     echo "zsh already installed"
 else
-    sudo apt update && sudo apt install -y zsh
+    apt update && apt install -y zsh
     if [ $? -eq 0 ]; then
         chsh -s "$(which zsh)"
     else
@@ -22,7 +22,7 @@ fi
 if command_exists starship; then 
     echo "starship already installed"
 else
-    curl -fsSL https://starship.rs/install.sh | sudo sh
+    curl -fsSL https://starship.rs/install.sh | sh
     if [ $? -ne 0 ]; then
         echo "Failed to install starship"
         exit 1
